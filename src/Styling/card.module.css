@@ -1,0 +1,6 @@
+.WeatherCard {
+  width: 25vw;
+  height: 20vh;
+  display: block;
+  align-self: center;
+}
