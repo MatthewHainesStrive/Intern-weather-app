@@ -5,7 +5,14 @@ import WeatherCard from "./WeatherCard";
 export default function Homepage() {
   return (
     <div className={styles.Homepage}>
-      <WeatherCard />
+      <WeatherCard
+        tempHigh={90}
+        tempLow={80}
+        city={"Chicago"}
+        icon={"test"}
+        height={400}
+        width={400}
+      />
     </div>
   );
 }

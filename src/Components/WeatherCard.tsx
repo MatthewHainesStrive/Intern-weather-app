@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import styles from "../Styling/card.module.css";
+import { weatherDetails } from "../Models/cardInput";
 
 const bull = (
   <Box
@@ -16,12 +17,19 @@ const bull = (
   </Box>
 );
 
-export default function WeatherCard() {
+export default function WeatherCard({
+  tempHigh,
+  tempLow,
+  city,
+  icon,
+  height,
+  width,
+}: weatherDetails) {
   return (
     <Card className={styles.WeatherCard}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
+          Weather
         </Typography>
         <Typography variant="h5" component="div">
           be{bull}nev{bull}o{bull}lent
