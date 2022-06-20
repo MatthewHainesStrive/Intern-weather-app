@@ -3,13 +3,24 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Homepage from "./Components/Homepage";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navigation from "./Components/Navigation";
+import WeekForecast from "./Components/WeekForecast";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Homepage />
+    <div className="wrapper">
+      <Router>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/week" element={<WeekForecast />} />
+        </Routes>
+      </Router>
+    </div>
   </React.StrictMode>
 );
 
