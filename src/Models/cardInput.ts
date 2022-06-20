@@ -3,4 +3,6 @@ export interface weatherDetails {
   tempLow: number;
   city: string;
   icon: string;
+  width: number;
+  height: number;
 }
