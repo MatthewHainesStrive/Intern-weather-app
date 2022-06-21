@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../Styling/searchBar.module.css";
-import WeatherCard from "./WeatherCard";
 
 export default function SearchBar() {
   return (
