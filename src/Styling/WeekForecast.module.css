@@ -17,18 +17,21 @@
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
+  text-align: center;
+  align-items: center;
 }
 
 .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   margin-top: 5vh;
   align-self: center;
   margin: 5vh auto 0 auto;
 }
 
 .headers {
-  margin-bottom: 40px;
+  margin-bottom: 2.5vh;
+  text-align: center;
 }

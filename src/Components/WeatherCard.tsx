@@ -11,10 +11,12 @@ export default function WeatherCard({
   width,
   height,
 }: weatherDetails) {
+  const textSize: number = width * 0.15;
+  let iconSize: number = width * 0.5;
   return (
     <div className={styles.card} style={{ width: width, height: height }}>
-      <h2>{city}</h2>
-      <WbSunnyIcon sx={{ fontSize: 125 }} />
+      <h2 style={{ fontSize: textSize }}>{city}</h2>
+      <WbSunnyIcon sx={{ fontSize: iconSize }} />
       <div className={styles.container}>
         <h4>High: {tempHigh}</h4>
         <h4>Low: {tempLow}</h4>
