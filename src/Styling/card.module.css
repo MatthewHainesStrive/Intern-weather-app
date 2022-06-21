@@ -24,10 +24,13 @@
 
 /* Add some padding inside the card container */
 .container {
-  padding: 2px 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 100%;
+}
+
+h2 {
+  font-size: 1.5vw;
 }
