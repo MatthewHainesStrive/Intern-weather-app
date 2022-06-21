@@ -1,11 +1,17 @@
 .Homepage {
   width: 100%;
   background: linear-gradient(to bottom right, #66c2ff, #e6f5ff);
-  display: flexbox;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: absolute;
   top: 56px;
   bottom: 0;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5vh auto 0 auto;
 }

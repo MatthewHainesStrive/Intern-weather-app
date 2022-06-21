@@ -1,8 +1,7 @@
 .WeatherCard {
-  width: 25vw;
+  width: 15vw;
   height: 20vh;
   display: block;
-  align-self: center;
 }
 
 .card {

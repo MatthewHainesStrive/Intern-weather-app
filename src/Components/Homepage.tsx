@@ -3,6 +3,7 @@ import styles from "../Styling/Homepage.module.css";
 import { weatherDetails } from "../Models/cardInput";
 import { getSingleDay } from "../Services/WeatherApi";
 import WeatherCard from "./WeatherCard";
+import SearchBar from "./SearchBar";
 import { SingleDayResp } from "../Models/SingleDayResp";
 
 export default function Homepage() {
@@ -34,14 +35,17 @@ export default function Homepage() {
 
   return (
     <div className={styles.Homepage}>
-      <WeatherCard
-        tempHigh={Math.trunc(currWeather.tempHigh)}
-        tempLow={Math.trunc(currWeather.tempLow)}
-        city={currWeather.city}
-        icon={currWeather.icon}
-        width={currWeather.width}
-        height={currWeather.height}
-      />
+      <div className={styles.wrapper}>
+        <SearchBar />
+        <WeatherCard
+          tempHigh={90}
+          tempLow={80}
+          city={"Chicago"}
+          icon={"temp"}
+          width={800}
+          height={600}
+        />
+      </div>
     </div>
   );
 }
