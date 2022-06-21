@@ -9,9 +9,9 @@ export default function Homepage() {
         tempHigh={90}
         tempLow={80}
         city={"Chicago"}
-        icon={"test"}
-        height={400}
-        width={400}
+        icon={"temp"}
+        width={500}
+        height={600}
       />
     </div>
   );

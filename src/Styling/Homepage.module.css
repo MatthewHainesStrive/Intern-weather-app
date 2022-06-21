@@ -1,9 +1,11 @@
 .Homepage {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   background: linear-gradient(to bottom right, #66c2ff, #e6f5ff);
   display: flexbox;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 56px;
+  bottom: 0;
 }
