@@ -30,7 +30,7 @@ export default function Homepage() {
       setCurrWeather(() => weather);
     };
     getWeather();
-  }, []);
+  }, [city]);
 
   return (
     <div className={styles.Homepage}>
