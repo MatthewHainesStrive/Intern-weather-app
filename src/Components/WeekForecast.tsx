@@ -1,88 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { weatherDetails } from "../Models/cardInput";
 import styles from "../Styling/WeekForecast.module.css";
 import WeatherCard from "./WeatherCard";
+import { getWeekWeather } from "../Services/WeatherApi";
 
 export default function WeekForecast() {
+  const [city, setCity] = useState("Chicago");
+  const [currWeather, setCurrWeather] = useState<weatherDetails[]>([]);
+
+  useEffect(() => {
+    const getWeather = async () => {
+      const resp = await getWeekWeather(city);
+      const weatherDetailsList: weatherDetails[] = resp.daily.map(
+        (obj: any) => {
+          return {
+            tempHigh: obj.temp.max,
+            tempLow: obj.temp.min,
+            city,
+            icon: obj.weather.main,
+            width: 150,
+            height: 200,
+          };
+        }
+      );
+      setCurrWeather(() => weatherDetailsList);
+    };
+    getWeather();
+  }, [city]);
+
   return (
     <div className={styles.Homepage}>
       <div className={styles.wrapper}>
-        <div className={styles.card}>
-          <h5 className={styles.headers}>Day One</h5>
-          <WeatherCard
-            tempHigh={99}
-            tempLow={88}
-            city={"Chicago"}
-            icon={"temp"}
-            width={150}
-            height={250}
-          />
-        </div>
-        <div className={styles.card}>
-          <h5 className={styles.headers}>Day Two</h5>
-          <WeatherCard
-            tempHigh={92}
-            tempLow={83}
-            city={"Chicago"}
-            icon={"temp"}
-            width={150}
-            height={250}
-          />
-        </div>
-        <div className={styles.card}>
-          <h5 className={styles.headers}>Day Three</h5>
-          <WeatherCard
-            tempHigh={96}
-            tempLow={89}
-            city={"Chicago"}
-            icon={"temp"}
-            width={150}
-            height={250}
-          />
-        </div>
-        <div className={styles.card}>
-          <h5 className={styles.headers}>Day Four</h5>
-          <WeatherCard
-            tempHigh={102}
-            tempLow={93}
-            city={"Chicago"}
-            icon={"temp"}
-            width={150}
-            height={250}
-          />
-        </div>
-        <div className={styles.card}>
-          <h5 className={styles.headers}>Day Five</h5>
-          <WeatherCard
-            tempHigh={78}
-            tempLow={65}
-            city={"Chicago"}
-            icon={"temp"}
-            width={150}
-            height={250}
-          />
-        </div>
-        <div className={styles.card}>
-          <h5 className={styles.headers}>Day Six</h5>
-          <WeatherCard
-            tempHigh={82}
-            tempLow={73}
-            city={"Chicago"}
-            icon={"temp"}
-            width={150}
-            height={250}
-          />
-        </div>
-        <div className={styles.card}>
-          <h5 className={styles.headers}>Day Seven</h5>
-          <WeatherCard
-            tempHigh={72}
-            tempLow={73}
-            city={"Chicago"}
-            icon={"temp"}
-            width={150}
-            height={250}
-          />
-        </div>
+        {currWeather.map((currDay: weatherDetails) => (
+          <div className={styles.card}>
+            <h5 className={styles.headers}>Day One</h5>
+            <WeatherCard
+              tempHigh={Math.trunc(currDay.tempHigh)}
+              tempLow={Math.trunc(currDay.tempLow)}
+              city={currDay.city}
+              icon={currDay.icon}
+              width={150}
+              height={250}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
