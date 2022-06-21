@@ -9,3 +9,9 @@
   top: 56px;
   bottom: 0;
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5vh auto 0 auto;
+}

@@ -10,7 +10,7 @@ export default function WeekForecast() {
         tempLow={80}
         city={"Chicago"}
         icon={"temp"}
-        width={500}
+        width={90}
         height={600}
       />
     </div>

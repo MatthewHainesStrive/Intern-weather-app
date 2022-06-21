@@ -1,5 +1,5 @@
 .WeatherCard {
-  width: 25vw;
+  width: 15vw;
   height: 20vh;
   display: block;
   align-self: center;
@@ -13,6 +13,7 @@
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
+  align-self: center;
   justify-content: space-around;
   align-items: center;
 }
