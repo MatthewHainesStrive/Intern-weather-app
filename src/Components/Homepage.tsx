@@ -43,7 +43,7 @@ export default function Homepage() {
           city={"Chicago"}
           icon={"temp"}
           width={800}
-          height={600}
+          height={400}
         />
       </div>
     </div>
