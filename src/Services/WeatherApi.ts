@@ -7,6 +7,7 @@ const getGeoLocation = async (city: string) => {
       "&limit=1&appid=" +
       "8e678c37738dbf5627dd4e07dc55fe50"
   );
+  console.log("Resp: " + JSON.stringify(cityResp));
   const { lat, lon } = cityResp.data[0];
   return { lat, lon };
 };
@@ -32,7 +33,6 @@ export const getSingleDay = async (city: string) => {
 export const getWeekWeather = async (city: string) => {
   let { lat, lon } = await getGeoLocation(city);
 
-  console.log("here");
   const params = {
     lat,
     lon,
