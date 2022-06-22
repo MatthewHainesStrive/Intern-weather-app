@@ -11,8 +11,8 @@ export default function WeatherCard({
   width,
   height,
 }: weatherDetails) {
-  const textSize: number = width * 0.15;
-  let iconSize: number = width * 0.5;
+  const textSize: number = height * 0.15;
+  let iconSize: number = height * 0.5;
   return (
     <div className={styles.card} style={{ width: width, height: height }}>
       <h2 style={{ fontSize: textSize }}>{city}</h2>

@@ -33,17 +33,22 @@ export default function Homepage() {
     getWeather();
   }, [city]);
 
+  const updateCity = (city: string) => {
+    console.log("city1 " + city);
+    setCity(() => city);
+  };
+
   return (
     <div className={styles.Homepage}>
       <div className={styles.wrapper}>
-        <SearchBar />
+        <SearchBar updateCity={updateCity} />
         <WeatherCard
-          tempHigh={90}
-          tempLow={80}
-          city={"Chicago"}
-          icon={"temp"}
+          tempHigh={Math.trunc(currWeather.tempHigh)}
+          tempLow={Math.trunc(currWeather.tempLow)}
+          city={city}
+          icon={currWeather.icon}
           width={800}
-          height={600}
+          height={400}
         />
       </div>
     </div>
