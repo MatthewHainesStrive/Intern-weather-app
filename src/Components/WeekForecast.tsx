@@ -50,6 +50,7 @@ export default function WeekForecast() {
               icon={currDay.icon}
               width={150}
               height={200}
+              weather={currDay.icon}
             />
           </div>
         ))}

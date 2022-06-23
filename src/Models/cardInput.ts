@@ -5,4 +5,5 @@ export interface weatherDetails {
   icon: string;
   width: number;
   height: number;
+  weather: string;
 }
