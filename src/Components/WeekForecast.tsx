@@ -41,6 +41,7 @@ export default function WeekForecast() {
               icon={currDay.icon}
               width={150}
               height={250}
+              weather={"rain"}
             />
           </div>
         ))}

@@ -20,13 +20,15 @@ export default function Homepage() {
   useEffect(() => {
     const getWeather = async () => {
       const resp = await getSingleDay(city);
+
       const weather: weatherDetails = {
         tempHigh: resp.main.temp_max,
         tempLow: resp.main.temp_min,
         city: city,
-        icon: resp.weather.main,
+        icon: resp.weather[0].main,
         width: 500,
         height: 600,
+        weather: "rain",
       };
       setCurrWeather(() => weather);
     };
@@ -34,7 +36,6 @@ export default function Homepage() {
   }, [city]);
 
   const updateCity = (city: string) => {
-    console.log("city1 " + city);
     setCity(() => city);
   };
 
@@ -49,6 +50,7 @@ export default function Homepage() {
           icon={currWeather.icon}
           width={800}
           height={400}
+          weather={"rain"}
         />
       </div>
     </div>
