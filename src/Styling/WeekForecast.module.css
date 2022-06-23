@@ -24,7 +24,17 @@
 .wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  width: 90%;
+  margin-top: 5vh;
+  align-self: center;
+  margin: 5vh auto 0 auto;
+}
+
+.searchBarWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 90%;
   margin-top: 5vh;
   align-self: center;
@@ -34,4 +44,6 @@
 .headers {
   margin-bottom: 2.5vh;
   text-align: center;
+  padding-top: 8vh;
+  align-self: center;
 }

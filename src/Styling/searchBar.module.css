@@ -34,4 +34,5 @@
 .wrap {
   display: flex;
   margin-bottom: 5vh;
+  align-self: center;
 }
